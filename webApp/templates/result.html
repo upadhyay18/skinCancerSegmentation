@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{url_for('static',filename='style/main.css')}}">
+  <title>Skin Lesion Segmentation</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Skin Cancer Segmentation</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 p-r-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/tool">Tool</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/project">Our Project</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid m-4" id="report">
+    <h2 class="text-center">Skin Lesion Report</h2>
+    <div class="col">
+      <span class="reportHead">Patient's Name: </span><span class="reportext">{{value[3]}}</span>
+      <div class="row">
+        <div class="col-6">
+          <span class="reportHead">Patient's Age: </span><span class="reportext">{{value[4]}}</span>
+        </div>
+        <div class="col-6">
+          <span class="reportHead">Patient's Gender: </span><span class="reportext">{{value[5]}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="row p-2" id="imgPath">
+      <div clss="col-4 m-2">
+        <img class="p-3" src="{{'static/projectImg/'+value[0]}}" height="250px"><br>
+        <h5 class="span12 text-center">Orignal Image</h5>
+      </div>
+      <div clss="col-4 m-2">
+        <img class="p-3" src="{{'static/projectImg/'+value[1]}}" height="250px"><br>
+        <h5 class="span12 text-center">Predicted Mask Image</h5>
+      </div>
+      <div clss="col-4 m-2">
+        <img class="p-3" src="{{'static/projectImg/'+value[2]}}" height="250px"><br>
+        <h5 class="text-center">Skin Lesion</h5>
+      </div>
+    </div>
+  </div>
+  <button style="margin-left:40vw;" id="downBTN" type="submit" onclick="saveDiv('imgPath','{{value[3]}}')"
+    class="btn btn-primary">Download
+    Report</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+    integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ url_for('static',filename='main.js') }}"> </script>
+</body>
+
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='style/main.css')}}">
+  <title>Skin Lesion Segmentation</title>
+</head>
+
+<body>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Skin Cancer Segmentation</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 p-r-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/tool">Tool</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/project">Our Project</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-2 m-2">
+    <h2>Segmentation Task</h2>
+    <p>Due to the great success of various deep learning methods in the field of medical image segmentation, various
+      architectures have been tested for skin lesion segmentation such as UNet, Double UNet, SegNet, etc. For skin
+      lesion segmentation Datasets: PH2, ISBI 2017, and ISBI 2018 are publicly available. This tested some of the deep
+      learning models such as Double UNet, SegNet, UNet, and the variants of UNet in which in place of conventional
+      encoders we have used pre-trained models, VGG16, ResNet 34, Inception V3 as encoders we have trained and tested
+      these models on PH2 and ISBI 2017 dataset.</p>
+  </div>
+  <div class="container-fluid">
+    <h2>LITERATURE SURVEY</h2>
+    <table class="table table-success table-striped">
+      <thead>
+        <th>Author</th>
+        <th>Architecture</th>
+        <th>Dataset used</th>
+        <th>Goal</th>
+        <th>Results</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ha Debesh et al</td>
+          <td>
+            Double Unet
+          </td>
+          <td>
+            ISIC 2018 challenge, (Lesion Boundary Segmentation dataset)<br>
+            No of Image- 2594
+          </td>
+          <td>
+            Proposed new architecture for medical image segmentaion.
+          </td>
+          <td colspan="5">
+            <p>dice coefficient (DSC)- 89.62%</p>
+            <p>mean Intersection over Union (mIoU)- 82.12%</p>
+            <p>Precision- 87.80%</p>
+            <p>Recall- 94.59%</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Brahmbhatt et
+          </td>
+          <td>
+            SegNet
+          </td>
+          <td>
+            PH2 Dataset
+            <p>No. of images- 200</p>
+            <p>After augmentation</p>
+            <p>No. of Images- 500</p>
+          </td>
+          <td>
+            Simple and computational efficient architecture has been proposed for skin lesion segmentation
+          </td>
+          <td>
+            <p>IOU: 95.09%</p>
+            <p>Dice coefficient: 82.1%</p>
+            <p>Precision: 91.84%</p>
+            <p>Recall: 94.19%</p>
+            <p>Accuracy: 95.53%</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Alom et al
+          </td>
+          <td>
+            R2U-Net
+          </td>
+          <td>
+            Kaggle competition on skin lesion segmentation (2017)
+            <p>Total Image- 2000</p>
+          </td>
+          <td>
+            Modified version of Unet, Recurrent Unet (RUnet )and Recurrent Residual Unet (R2Unet) has been proposed.
+          </td>
+          <td>
+            <p>Accuracy- 94.24%</p>
+            <p>AUC- 94.19%</p>
+          </td>
+        </tr>
+        <tr>
+          <td>Phan et al
+          </td>
+          <td>
+            Unet
+          </td>
+          <td>
+            <p>PH2</p>
+            <p>Total= 200</p>
+            <p>(This dataset is used for evaluation only)</p><br>
+            <p>ISBI 2016</p>
+            <p>Train= 900</p>
+            <p>Test=379</p><br>
+            <p>ISBI 2017</p>
+            <p>Train= 2000</p>
+            <p>Test= 600</p>
+            <p>validation= 150</p>
+          </td>
+          <td>
+            Unet Based architecture which perform lession segmentation, boundary distance map regression and contour
+            detection.
+          </td>
+          <td>
+            <p>PH2</p>
+            <p>IoU: 89.22</p>
+            <p>DI: 94.04</p>
+            <p>AC: 96.01</p><br>
+            <p>ISBI 2016</p>
+            <p>IoU: 87.08</p>
+            <p>DI: 92.61</p>
+            <p>AC: 96.48</p><br>
+            <p>ISBI 2017</p>
+            <p>IoU: 79.95</p>
+            <p>DI: 87.61</p>
+            <p>AC: 94.55</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="container-fluid p-2 m-2">
+    <h2>Problems In Segmentation</h2>
+    <p>Skin lesion segmentation poses several unique challenges. The image quality has a critical impact on segmentation
+      performance. For example, blurred images result in poor outcomes. The image pre-processing steps also have an
+      impact on the performance. We need variations of the images to improve the ability of the fit models to generalize
+      what they have learned to new images. It is difficult to collect such varied images which raises the need for data
+      augmentation.
+    </p>
+    <p>
+      There are very few publicly available dataset so it is difficult to test models on different dataset for
+      comparison. There is no such comparison of various architectures available on skin lesion dataset, to identify
+      architecture with highest accuracy. A skin lesion dataset of dark skin tone should also be developed in order to
+      produce a more robust testing model for skin cancer segmentation task.
+    </p>
+  </div>
+  <div class="container-fluid p-2 m-2">
+    <h2>Dataset Description</h2>
+    <h5>PH2 Dataset Description</h5>
+    <p>The PH2 database was built up through a joint research collaboration between the Universidade do Porto, Tecnico
+      Lisboa, and the Dermatology Service of Hospital Pedro Hispano in Matosinhos, Portugal. It contains a total
+      of&nbsp;200&nbsp;skin lesion images, containing&nbsp;80&nbsp;common nevi,&nbsp;80&nbsp;atypical nevi,
+      and&nbsp;40&nbsp;melanomas. dimensions of each image are 786x560. Every image was evaluated by the expert
+      dermatologist with the following parameters-</p>
+    <ul>
+      <li>Manual segmentation of skin lesion
+      </li>
+      <li>Clinical and histological diagnosis
+      </li>
+      <li>Dermoscopic criteria such as Asymmetry, Color, Pigment network, etc.
+      </li>
+    </ul>
+    <table class="table table-success table-striped">
+      <tbody>
+        <tr>
+          <th>Labels </th>
+          <th>Benign</th>
+          <th>Melanoma</th>
+          <th>Atypical nevus</th>
+          <th>Total</th>
+        </tr>
+        <tr>
+          <th>Number of Images</th>
+          <td>80</td>
+          <td>40</td>
+          <td>80</td>
+          <td>200</td>
+        </tr>
+      </tbody>
+    </table>
+    <h5>ISBI-2017 Dataset Description</h5>
+    <p>ISBI 2017 comprises 2000 training images, 600 test images, and a validation set of 150 images. Additional images
+      are being added to the archive in an ongoing fashion. A subset of the images has undergone annotation and markup
+      by recognized skin cancer experts. These markups include dermoscopic features (i.e., global and focal morphologic
+      elements in the image known to discriminate.</p>
+    <table class="table table-success table-striped">
+      <tbody>
+        <tr>
+          <td>
+            <p>Dataset&nbsp;</p>
+          </td>
+          <td colspan="3">
+            <p>Training Data&nbsp;</p>
+          </td>
+          <td colspan="3">
+            <p>Validation Data</p>
+          </td>
+          <td colspan="3">
+            <p>Test Data</p>
+          </td>
+          <td>
+            <p>Total</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>Label&nbsp;</p>
+          </td>
+          <td>
+            <p>B</p>
+          </td>
+          <td>
+            <p>M</p>
+          </td>
+          <td>
+            <p>SK</p>
+          </td>
+          <td>
+            <p>B</p>
+          </td>
+          <td>
+            <p>M</p>
+          </td>
+          <td>
+            <p>SK</p>
+          </td>
+          <td>
+            <p>B</p>
+          </td>
+          <td>
+            <p>M</p>
+          </td>
+          <td>
+            <p>SK</p>
+          </td>
+          <td><br></td>
+        </tr>
+        <tr>
+          <td>
+            <p>Images</p>
+          </td>
+          <td>
+            <p>1372</p>
+          </td>
+          <td>
+            <p>374</p>
+          </td>
+          <td>
+            <p>254</p>
+          </td>
+          <td>
+            <p>78</p>
+          </td>
+          <td>
+            <p>30</p>
+          </td>
+          <td>
+            <p>42</p>
+          </td>
+          <td>
+            <p>393</p>
+          </td>
+          <td>
+            <p>117</p>
+          </td>
+          <td>
+            <p>90</p>
+          </td>
+          <td>
+            <p>2750</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{url_for('static',filename='style/main.css')}}">
+  <title>Skin Lesion Segmentation</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Skin Cancer Segmentation</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 p-r-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/tool">Tool</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/project">Our Project</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <h2>Skin Cancer</h2>
+    <p class="text">
+      Skin cancer is regarded as abnormal and irresistable growth of skin cells. There is a tremendous growth in skin
+      cancer cases in the present arena due to the harmful radiations from the sun. It is known that between 2 and 3
+      million non-melanoma skin cancers and 132,000 melanoma skin cancers occur globally each year. According to the
+      American Institute for Cancer Research, Skin cancer is the 19th most common cancer. In the year 2018, nearly
+      3,00,000 cases were reported worldwide, with this type of cancer the survival probability of a patient depends on
+      the early detection of the disease. So early detection appears to be the most promising technique for the
+      treatment
+      of these diseases.
+    </p>
+    <p>
+      Various methodologies are used by doctors in order to detect and treat patients at early stages which include
+      dermoscopy (magnifying lesions microscopically) and biopsy which removes a sample from a suspected skin lesion for
+      medical examination.
+    </p>
+  </div>
+  <div class="container-fluid">
+    <h2>Skin Cancer Segmentation</h2>
+    <p>
+      Image Segmentation is the process of assigning labels to each pixel of an image, which reduces the complexity of
+      the
+      image and thus analyzing / processing the image becomes simpler. Using these labels, we can specify boundaries,
+      draw
+      lines, and separate the most required objects in an image from the rest of the not-so-important ones. Nowadays
+      various deep learning models provide state-of-the-art performance in the task of image segmentation. Medical image
+      segmentation helps clinicians focus on a particular area of the disease and extract detailed information for a
+      more
+      accurate diagnosis. In the domain of skin lesion segmentation various computerized segmentation techniques have
+      been
+      proposed, which consume less time for segmentation compared to manual segmentation. <br>
+      Due to the great success of various deep learning methods in the field of medical image segmentation, various
+      architectures have been tested for skin lesion segmentation such as UNet, Double UNet, SegNet, etc. For skin
+      lesion
+      segmentation Datasets: PH2, ISBI 2017, and ISBI 2018 are publicly available.
+    </p>
+  </div>
+  <div class="container-fluid">
+    <h2>Segmentation Tool</h2>
+    <p>
+      Segmentation tool, is as deep learning model which uses as verient of Unet architecture with VGG16 as backbones.
+      it
+      performance pixel wise classification on skin cancer image, and identify the cancerous region on skin image.
+      <a href="/tool">Use Tool</a>
+    </p>
+  </div>
+  <div class="container-fluid">
+    <h2>Project Deatails</h2>
+    <p>For skin cancer segmentation task, we tested various methods and architectures as describe in literatures.
+      finally
+      we used an varient of Unet Model for segmentation.<a href="/project">click to know more</a>
+    </p>
+  </div>
+  <div class="container-fluid">
+    <h2>About Us</h2>
+    <p>I am final year student of Maulana Azad National Institute of Tecnology in department of computer science. I
+      build
+      this Project as my Minor Project in my pre-final year.</p>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+    
+</body>
+
+</html>

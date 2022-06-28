@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{url_for('static',filename='style/main.css')}}">
+  <title>Skin Lesion Segmentation</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Skin Cancer Segmentation</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 p-r-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/tool">Tool</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/project">Our Project</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <h2 style="text-align:center">Fill Patient Deatails</h2>
+  <div class="container m-4 p-3">
+    <form class="container" method="post" action="/tool" enctype="multipart/form-data">
+      <div class="form-group ">
+        <label for="name">Patient's Name</label>
+        <input type="text" class="form-control" name="name" id="from-name" placeholder="Enter Name">
+      </div>
+      <div class="form-group">
+        <label for="Age">Patient's Age</label>
+        <input type="number" class="form-control" name="age" id="from-age" placeholder="Enter Age">
+      </div>
+      <div class="form-group">
+        <label for="gender">Patient's Gender</label>
+        <select name="gender" class="form-control" id="from-gen">
+          <option>Male</option>
+          <option>Female</option>
+          <option>Trans Gender</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="inputFile">Patient's Skin Image</label>
+        <input onchange="readURL(this)" type="file" class="form-control-file" id="imgFile" name="inputImg">
+        <img id="inputIMG" src="static\style\assetImg\noIMG.jpg" width="250px" height="250px">
+      </div>
+      <button style="margin-left:40vw;" type="submit" class="btn btn-primary">Segment Image</button>
+    </form>
+  </div>
+  <script src="{{ url_for('static',filename='main.js') }}"> </script>
+
+  </script>
+</body>
+
+</html>
